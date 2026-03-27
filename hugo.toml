@@ -20,7 +20,7 @@ defaultContentLanguage = "pt"
         weight = 20
       [[languages.pt.menu.main]]
         name = "Submeter"
-        url = "TEU_LINK_DO_GOOGLE_FORM"
+        url = "https://docs.google.com/forms/d/e/1FAIpQLScjAsMDbJaVvEQVimBssTS0OnkqPiq8Bt8ilgJ_Vf7hwyBdQg/viewform?usp=publish-editor"
         weight = 30
       [[languages.pt.menu.main]]
         name = "Revista"
