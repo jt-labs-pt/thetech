@@ -1,0 +1,31 @@
+name: The Tech Automation
+on:
+  schedule:
+    - cron: '0 0 * * *' # Diário para artigos
+    - cron: '0 0 1 * *' # Mensal (dia 1) para a revista
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: { python-version: '3.9' }
+      - name: Dependencies
+        run: pip install pandas deep-translator fpdf2
+      - name: Process Articles
+        run: python scripts/processor.py
+      - name: Generate Magazine
+        run: python scripts/magazine.py
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+      - name: Build & Deploy
+        run: |
+          hugo --minify
+          git config --global user.name "TheTechBot"
+          git config --global user.email "bot@thetech.com"
+          git add .
+          git commit -m "Auto-update content" || exit 0
+          git push
