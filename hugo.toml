@@ -1,0 +1,75 @@
+baseURL = "https://jt-labs-pt.github.io/thetech/"
+title = "The Tech"
+theme = "PaperMod"
+defaultContentLanguage = "pt"
+
+# Configuração de Línguas
+[languages]
+  [languages.pt]
+    languageName = "Português"
+    contentDir = "content/articles/pt"
+    weight = 1
+    [languages.pt.menu]
+      [[languages.pt.menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 10
+      [[languages.pt.menu.main]]
+        name = "Artigos"
+        url = "/articles/pt"
+        weight = 20
+      [[languages.pt.menu.main]]
+        name = "Submeter"
+        url = "TEU_LINK_DO_GOOGLE_FORM"
+        weight = 30
+      [[languages.pt.menu.main]]
+        name = "Revista"
+        url = "/magazine"
+        weight = 40
+
+  [languages.en]
+    languageName = "English"
+    contentDir = "content/articles/en"
+    weight = 2
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        name = "Home"
+        url = "/en/"
+        weight = 10
+      [[languages.en.menu.main]]
+        name = "Articles"
+        url = "/en/articles/en"
+        weight = 20
+
+  [languages.es]
+    languageName = "Español"
+    contentDir = "content/articles/es"
+    weight = 3
+
+  [languages.fr]
+    languageName = "Français"
+    contentDir = "content/articles/fr"
+    weight = 4
+
+  [languages.de]
+    languageName = "Deutsch"
+    contentDir = "content/articles/de"
+    weight = 5
+
+# Configurações do Tema PaperMod (Minimalista)
+[params]
+  env = "production"
+  title = "The Tech"
+  description = "Plataforma Colaborativa de Tecnologia"
+  defaultTheme = "auto" # Muda entre dark/light mode sozinho
+  ShowReadingTime = true
+  displayFullLangName = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+
+  [params.homeInfoParams]
+    Title = "Bem-vindo ao The Tech 🚀"
+    Content = "A plataforma autónoma onde a tecnologia é escrita por todos e traduzida para o mundo."
+
+[markup.goldmark.renderer]
+  unsafe = true # Permite usar HTML se precisares
